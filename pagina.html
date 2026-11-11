@@ -1,0 +1,56 @@
+/*CONFIGURACION INICIAL */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Century Gothic", sans-serif; 
+} 
+
+/*BARRA DE NAVEGACION */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background: #000000e7;
+    padding: 20px;
+    color: white;
+    gap: 20px;
+}
+
+/* 
+   Corregido: Se quitó el espacio entre ".menu" y ":hover" y se cambió por ".option:hover".
+   Si dejas el espacio, cambia de color todo lo que esté adentro (incluyendo textos raros), 
+   al apuntar específicamente a .option solo brillarán los enlaces del menú.
+*/
+.option:hover {
+    color: orange;
+}
+
+.option { 
+    text-decoration: none;
+    color: white; 
+    transition: color 0.3s ease; /* Añadido: Hace que el cambio a naranja sea suave */
+}
+
+.logo {
+    height: 100px;
+    width: 150px;
+    border-radius: 10px;
+    margin-right: 25%;
+} 
+
+.botoncito {
+    background: #FF9900;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;    
+}
+
+.princ {
+    justify-self: center;
+}
