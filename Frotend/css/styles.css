@@ -1,106 +1,731 @@
-/*CONFIGURACION INICIAL */
+
+/* =========================================
+   1. CONFIGURACIÓN INICIAL
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    
-    font-family: "Century Gothic", sans-serif; 
-} 
+    font-family: "Century Gothic", sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+}
 
-/*BARRA DE NAVEGACION */
+
+/* =========================================
+   2. BARRA DE NAVEGACIÓN
+========================================= */
+
 .menu {
     display: flex;
-    justify-content: center;
-    align-items: center; 
-    background: #000000e7;
-    padding: 20px;
-    color: white;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffffe7;
+    padding: 12px 5%;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
-.menu :hover {
-    color: orange;
-}
+/* LOGO DEL MENÚ */
 
-.option { 
-    text-decoration: none;
-    color: white; 
-}
-
-
-.logo {
-    height: 100px;
-    width: 150px;
+.menu .logo {
+    height: 75px;
+    width: 110px;
+    object-fit: contain;
     border-radius: 10px;
-    margin-right: 25%;
-} 
+}
+
+/* LISTA DE NAVEGACIÓN */
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+}
+
+/* ENLACES DEL MENÚ */
+
+.option {
+    text-decoration: none;
+    color: rgb(2, 2, 2);
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.option:hover {
+    color: #FF9900;
+}
+
+
+/* =========================================
+   3. BOTONES
+========================================= */
 
 .botoncito {
+    display: inline-block;
     background: #FF9900;
     color: black;
-    border: none;
+    border: 2px solid #FF9900;
     border-radius: 10px;
     padding: 10px 20px;
     text-decoration: none;
-    cursor: pointer;    
-}
-.mini-list {
-    display: flex;
-    justify-content:left;
-    align-items: center; 
-    background: #000;
-    padding: 20px;
-    color: #FF9900;
-    gap: 20px;
-}
-.title1 {
-    margin: 10px;
-    text-align: left;
-    font-size: 30px;
-    color:white;
-    margin-top: 50px;
-}
-.title2 {
-    margin: 10px;
-    text-align: left;
-    font-size: 30px;
-    color: #FF9900;
-    margin-top: 5px;
-}
-
-
-.description {
-    margin: 10px;
-    text-align: left;
-    font-size: 20px;
-    color: white;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.conocerservicios{
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px; 
     cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+.botoncito:hover {
+    background: #e68a00;
+    border-color: #e68a00;
+    transform: translateY(-2px);
+}
+
+.botoncito2 {
+    display: inline-block;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botoncito2:hover {
+    background: white;
+    color: black;
+}
+
+.botoncito3 {
+    display: inline-block;
+    background: transparent;
+    color: white;
+    border: 2px solid #FF9900;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botoncito3:hover {
+    background: #FF9900;
+    color: black;
+}
+
+
+/* =========================================
+   4. SECCIÓN DE PRESENTACIÓN
+========================================= */
 
 .presentation {
-    background-image: 
-    linear-gradient(rgba(0 , 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
-    url(/images/WhatsApp\ Image\ 2026-11-08\ at\ 8.42.59\ PM.jpeg)
-    ;
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.8)
+        ),
+        url("../images/WhatsApp Image 2026-11-08 at 8.42.59 PM.jpeg");
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin: 0;
+
     min-height: 70vh;
+    padding: 60px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
+
+/* LISTA DE SERVICIOS */
+
+.mini-list {
+    margin-bottom: 25px;
+}
+
+.mini-list ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.mini-list li {
+    color: #FF9900;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* PRIMER TÍTULO */
+
+.title1 {
+    margin: 10px 0;
+    text-align: left;
+    font-size: 30px;
+    color: white;
+    margin-top: 30px;
+}
+
+.title1 h1 {
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+/* SEGUNDO TÍTULO */
+
+.title2 {
+    margin: 10px 0;
+    text-align: left;
+    font-size: 30px;
+    color: #FF9900;
+}
+
+.title2 h2 {
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+/* DESCRIPCIÓN */
+
+.description {
+    max-width: 650px;
+    margin: 20px 0 30px;
+    text-align: left;
+    font-size: 18px;
+    color: white;
+}
+
+/* CONTENEDOR DE BOTONES */
+
+.conocerservicios {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================
+   5. COLORES GENERALES
+========================================= */
+
+.orange {
+    color: #FF9900;
+}
+
+
+/* =========================================
+   6. SECCIÓN DE SERVICIOS
+========================================= */
+
+.Services {
+    padding: 70px 5%;
+    margin: 0;
+    background: #f7f7f7;
+}
+
+/* PRESENTACIÓN DE SERVICIOS */
+
+.present {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.present h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.present p {
+    font-size: 16px;
+    color: #555555;
+}
+
+
+/* =========================================
+   7. TARJETAS DE SERVICIOS
+========================================= */
+
+.Cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+/* TARJETA INDIVIDUAL */
+
+.tarjeta {
+    width: 240px;
+    padding: 20px;
+    background: white;
+    color: black;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* IMÁGENES DE LAS TARJETAS */
+
+.tarjeta img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.tarjeta h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.tarjeta p {
+    font-size: 14px;
+    color: #555555;
+}
+
+
+/* =========================================
+   8. SECCIÓN NUESTRO EQUIPO
+========================================= */
+
+.Ourteam {
+    background: #000000;
+    color: white;
+    padding: 80px 8%;
+}
+
+/* CONTENIDO DEL EQUIPO */
+
+.present2 {
+    max-width: 750px;
+    background: transparent;
+    color: white;
+}
+
+.present2 h4 {
+    margin-bottom: 20px;
+}
+
+.present2 h2 {
+    font-size: 35px;
+    line-height: 1.3;
+}
+
+.present2 p {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    color: #dddddd;
+    font-size: 16px;
+    max-width: 650px;
+}
+
+/* ========================================
+
+    ESTRELLAS DE CALIFICACIÓN
+
+========================================= */
+
+
+.estrellas {
+    color: #FF9900;
+    font-size: 22px;
+}
+
+.estrellas .vacia {
+    color: #ccc;
+}
+
+.estrellas small {
+    color: #666;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   9. PIE DE PÁGINA
+========================================= */
+
 footer {
     display: flex;
-    background: #000000e7;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #ffffff;
+    color: rgb(5, 5, 5);
+    gap: 30px;
+    padding: 30px 8%;
+}
+
+/* LOGO DEL FOOTER */
+
+.imagenfoot .logo {
+    width: 110px;
+    height: 75px;
+    object-fit: contain;
+}
+
+/* INFORMACIÓN DE CONTACTO */
+
+.information {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.information a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.information a:hover {
+    color: #FF9900;
+}
+
+
+/* =========================================
+   10. DISEÑO RESPONSIVE
+   TABLETAS Y CELULARES
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* MENÚ */
+
+    .menu {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-list {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    /* PRESENTACIÓN */
+
+    .presentation {
+        padding: 50px 6%;
+        min-height: 60vh;
+    }
+
+    .title1 h1,
+    .title2 h2 {
+        font-size: 35px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    /* SERVICIOS */
+
+    .Services {
+        padding: 50px 5%;
+    }
+
+    .present h2 {
+        font-size: 28px;
+    }
+
+    .Cards {
+        gap: 20px;
+    }
+
+    .tarjeta {
+        width: 45%;
+        min-width: 220px;
+    }
+
+    /* EQUIPO */
+
+    .Ourteam {
+        padding: 60px 6%;
+    }
+
+    .present2 h2 {
+        font-size: 28px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================
+   11. DISEÑO PARA CELULARES PEQUEÑOS
+========================================= */
+
+@media (max-width: 480px) {
+
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .title1 h1,
+    .title2 h2 {
+        font-size: 28px;
+    }
+
+    .mini-list ul {
+        gap: 10px;
+    }
+
+    .mini-list li {
+        font-size: 12px;
+    }
+
+    .conocerservicios {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tarjeta {
+        width: 100%;
+    }
+
+    .present2 h2 {
+        font-size: 25px;
+    }
+
+}
+
+/* =========================
+    11. DISEÑO DE PROYECTOS HECHOS
+=================================== */
+
+/* ================================= */
+/* CARRUSEL DE PROYECTOS */
+/* ================================= */
+
+.Done {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.carrusel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 40px auto;
+    max-width: 1100px;
+    gap: 15px;
+}
+
+.carrusel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 25px;
+    scrollbar-width: none;
+    width: 100%;
+}
+
+.carrusel::-webkit-scrollbar {
+    display: none;
+}
+
+.proyecto {
+    min-width: calc(50% - 13px);
+    background: #171920;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+.proyecto img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.proyecto-info {
+    padding: 20px;
     color: white;
-    
+}
+
+.proyecto-info h3 {
+    margin-bottom: 10px;
+}
+
+.proyecto-info p {
+    color: #ccc;
+}
+
+.carrusel-btn {
+    background: #e98b32;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.carrusel-btn:hover {
+    background: #171920;
+    transform: scale(1.1);
+}
+
+.indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.indicadores span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #aaa;
+    cursor: pointer;
+}
+
+.indicadores span.activo {
+    background: #e98b32;
+}
+
+
+/* ================================= */
+/* SECCIÓN DE RESEÑAS */
+/* ================================= */
+
+.resenas {
+    padding: 80px 8%;
+    background: #171920;
+    color: white;
+    text-align: center;
+}
+
+.resenas-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.resena-card {
+    background: #222630;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.resena-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.resena-card .estrellas {
+    color: #e98b32;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.resena-card p {
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.cliente {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cliente-icono {
+    background: #e98b32;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.cliente h4 {
+    margin: 0;
+}
+
+.cliente small {
+    color: #aaa;
+}
+
+
+/* ================================= */
+/* DISEÑO RESPONSIVE */
+/* ================================= */
+
+@media (max-width: 768px) {
+
+    .resenas-container {
+        grid-template-columns: 1fr;
+    }
+
+    .proyecto {
+        min-width: 100%;
+    }
+
+    .proyecto img {
+        height: 220px;
+    }
+
+    .Done,
+    .resenas {
+        padding: 50px 5%;
+    }
+
+    .carrusel-container {
+        gap: 8px;
+    }
+
+    .carrusel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
 }
